@@ -51,4 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
+$route['TestController'] = 'TestController/whoAreWe';
+$route['contact/(:any)'] = 'TestController/whoAreWe/$1';
+$route['test-route/(:num)'] = function ($num) { return 'TestController/whoAreWe/test' . $num / 2; };
 $route['translate_uri_dashes'] = FALSE;

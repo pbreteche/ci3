@@ -49,9 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'PokemonViewerController';
 $route['404_override'] = '';
-$route['TestController'] = 'TestController/whoAreWe';
-$route['contact/(:any)'] = 'TestController/whoAreWe/$1';
-$route['test-route/(:num)'] = function ($num) { return 'TestController/whoAreWe/test' . $num / 2; };
+$route['pokemon/(:num)'] = 'PokemonViewerController/detail/$1';
 $route['translate_uri_dashes'] = FALSE;

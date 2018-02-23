@@ -6,13 +6,18 @@ class Pokemon_model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('pokemon');
 	}
 
 	public function getList()
 	{
 		$query = $this->db->get('pokemon', 30);
 
-		return $query->result(get_class($this->pokemon));
+		return $query->result();
+	}
+
+	public function get($id)
+	{
+		$query = $this->db->get_where('pokemon', ['id' => $id]);
+		return $query->result()[0] ?? null;
 	}
 }
